@@ -1,0 +1,91 @@
+public class MyLinkedList<E>{
+
+  private class Node {
+    private E data;
+    private Node next, prev;
+
+    private Node(E dats, Node net, Node pre) {                                //standard constructor
+      data = dats;
+      next = net;
+      prev = pre;
+    }
+    //gives the next node
+    private Node next(){
+      return next;
+    }
+    //gives the previous node
+    private Node prev(){
+      return prev;
+    }
+    //mutator for the next node
+    private void setNext(Node net){
+      next = net;
+    }
+    //mutator for the previous Node
+    private void setPrev(Node pre){
+      prev = pre;
+    }
+    //returns the data
+    private E getData() {
+      return data;
+    }
+    //does this return the original value or the new value? before it's usually the old value. Sets the data variable to i
+    private E setData(Integer i) {
+      E ori = data;
+      data = i;
+      return ori;
+    }
+    //string to see individual parts (not used)
+    public String toString() {
+      String tostrung = "Previous Node: " + prev + ", " + "Integer Value: " + data + ", " + "NextNode: " + next;
+      return tostrung;
+    }
+  }
+  private int size;
+  private Node start, end;
+
+  public String toString() {
+    String a = "{";
+    int index = 0;
+    Node looking = start;
+    while (x < size) {
+      a += looking.getData() + " ";
+      a = a.next();
+    }
+    a += "}";
+    return a;
+  }
+    //not REQUIRED, but it would be crazy of you not to have this
+    public MyLinkedList() {
+      size = 0;
+      start = null;
+      end = null;
+    }
+    //construct an empty list
+    public void clear() {
+      size = 0;
+      start = null;
+      end = null;
+    }
+    //reset the list to an empty state. Very similar to the constructor.
+    public boolean add(E value) {
+      Node ender = new Node(value, null, end);
+if (size > 0) {
+  end.setNext(ender);       //will get nullpointer exception otherwise
+}
+else {
+  start = ender;      //changes the start to ender when start is null
+}
+end = ender;          //end will now refer to this new node
+size++;
+return true;
+    }
+    //add an element to the end of the list (the boolean would be true all the time if you want to conform to list standards)
+public void extend(MyLinkedList<E> other)
+    /*in O(1) time, connect the other list to the end of this list.
+    The other list is then reset to size 0 (do not wipe out the nodes, just disconnect them.)
+    This is how you will merge lists together for your radix sort.
+    */
+public E removeFront()
+    //remove the 1st element of the list, and return that value.
+}
