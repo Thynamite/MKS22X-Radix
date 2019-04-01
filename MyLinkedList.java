@@ -95,16 +95,16 @@ public class MyLinkedList<E>{
       this.size += other.size;
 
       other.size = 0;                                                           //Eliminates the second list as a thing
-      other.start = null;
-      other.end = null;
+      //other.start = null;
+      //other.end = null;
     }
     else if (this.size == 0 && other.size != 0) {
       this.start = other.start;
       this.end = other.end;
       this.size = other.size;
       //this = other;                                       Basically the short version to comprehend, but this isn't allowed in this form
-      other.start = null;
-      other.end = null;
+      //other.start = null;
+      //other.end = null;
       other.size = 0;
       //other = New MyLinkedList();                         ^
     }

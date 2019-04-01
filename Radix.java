@@ -15,4 +15,11 @@ public class Radix {
 
 
   }
+
+  private static int place(int value, int place) {
+    int a = value;
+    for (int x = 1; x < place; x++) {
+      
+    }
+  }
 }
