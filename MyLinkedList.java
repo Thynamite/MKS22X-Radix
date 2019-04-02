@@ -62,6 +62,9 @@ public class MyLinkedList<E>{
       end = null;
     }
     //construct an empty list
+    public int size(){
+      return size;
+    }
     public void clear() {
       size = 0;
       start = null;
