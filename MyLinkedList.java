@@ -1,5 +1,17 @@
 public class MyLinkedList<E>{
 
+  public class IteratorMLL {
+    private Node current;
+
+    public E next(){
+      current = current.next();
+      return current.getData();
+    }
+
+    public boolean hasNext(){
+      return current != end;
+    }
+  }
   private class Node {
     private E data;
     private Node next, prev;

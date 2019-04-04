@@ -23,7 +23,6 @@ public class Radix {
       }
       else {
         for (int i = 0; i < data.length; i++) {
-          //int dates = buckets[0].removeFront();
           int times = (data[i] / (int)Math.pow(10,x)) % 10;
           if (data[i] < 0) {
             buckets[9-times].add(data[i]);
@@ -37,9 +36,15 @@ public class Radix {
       for (int a = 0; a < buckets.length; a++) {
         merge.extend(buckets[a]);
       }
+      /*
+      while (merge.IteratorMLL.hasNext()) {
+        data[i] = merge.next();
+      }
+      */
       for (int i = 0; i < merge.size(); i++) {
         data[i] = merge.removeFront();
       }
+
     }
   }
 
