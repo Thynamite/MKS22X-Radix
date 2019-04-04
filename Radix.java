@@ -18,6 +18,9 @@ public class Radix {
   @SuppressWarnings("unchecked")
   private static void radicalh(int[] data, int significant) {
     MyLinkedList<Integer>[] buckets = new MyLinkedList[20];
+    for (int i = 0; i < buckets.length; i++) {
+      buckets[i] = new MyLinkedList<Integer>();
+    }
     for (int i = 0; i < data.length; i++) {
       if (data[i] < 0) {
         buckets[9-place(data[i],significant)].add(data[i]);
